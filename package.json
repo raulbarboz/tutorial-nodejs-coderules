@@ -4,12 +4,19 @@
   "description": "App in NodeJs",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon app"
   },
   "author": "Raul Barboza",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.19.0",
-    "express": "^4.17.1"
+    "bootstrap": "^4.3.1",
+    "dotenv": "^8.0.0",
+    "ejs": "^2.6.1",
+    "express": "^4.17.1",
+    "jquery": "^3.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
   }
 }
