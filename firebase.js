@@ -44,4 +44,15 @@ module.exports.SignInWithEmailAndPassword = (email, password) => {
            });
    }
 
+   module.exports.InputData = (name) => {
+     return firebase.database().ref('users').set({
+       name
+     })
+     .then(function() {
+      console.log('Synchronization succeeded');
+    })
+    .catch(function(error) {
+      console.log('Synchronization failed');
+    });
+   }
 return module.exports

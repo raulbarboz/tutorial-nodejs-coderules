@@ -57,6 +57,11 @@ app.post('/login', (req, res) => {
     })
 })
 
+app.post('/input', (req, res) => {
+    let {name} = req.body
+    Auth.InputData(name)
+})
+
 app.get('/dashboard', function(req, res){
     if(userLogged){
         res.render('dashboard');
