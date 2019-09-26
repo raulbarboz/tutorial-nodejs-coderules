@@ -59,15 +59,19 @@ app.post('/login', (req, res) => {
 
 app.post('/input', (req, res) => {
     let {name} = req.body
-    Auth.InputData(name)
+    Auth.InputData(name).then(() => {
+        res.render('dashboard')
+    })
 })
 
 app.get('/dashboard', function(req, res){
     if(userLogged){
-        res.render('dashboard');
+        Auth.GetData().then((data) => {
+            res.render('dashboard', {data});
+        })
     }else{
         res.redirect('/')
     }
 });
 
-app.listen(3000)
+app.listen(process.env.PORT || 3000)
